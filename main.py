@@ -10,7 +10,6 @@ turn =0
 print("Welcome to Tic Tak Toe")
 one = input("Enter user 1: ")
 two = input("Enter user 2: ")
-print(one + "Chance")
 while not winner and turn < 9:
         print(board [0] + " | " + board[1] + " | " + board[2])
         print("----------")
@@ -18,6 +17,10 @@ while not winner and turn < 9:
         print("----------")
         print(board [6] + " | " + board[7] + " | " + board[8])
         #asking player to play their move 
+        if current_player =='X':
+              print (one + "'s chance")
+        else:
+              print (two +"'s chance")
         try:
                 move = int(input("choose a position from 0-8 : "))
 
@@ -47,10 +50,8 @@ while not winner and turn < 9:
         #Changing player 
         if current_player == 'X':
             current_player ='O'
-            print (two + "chance")
         else:
             current_player = 'X'
-            print (one + "chance")
         #Final board display
         print(f"\n{board [0]} | {board[1]} | {board[2]}")
         print("----------")
@@ -61,6 +62,6 @@ while not winner and turn < 9:
     
     #Game result
 if winner:
-    print(f"\nPlayer {current_player} wins!")
+    print(f"\nPlayer {current_player    } wins!")
 else:
     print("\nIt's a tie!")
